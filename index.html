@@ -16,252 +16,268 @@
 <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
 
     <!-- Головний контейнер чек-листа -->
-    <div class="bg-white p-6 md:p-10 rounded-2xl shadow-xl w-full max-w-2xl">
-        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Щоденний чек-лист для обходу виробництва</h1>
-        <p class="text-sm text-center text-gray-500 mb-8">Детальний огляд</p>
+    <div class="bg-white p-6 md:p-10 rounded-2xl shadow-xl w-full max-w-2xl border border-gray-200">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-2">Щоденний чек-лист</h1>
+        <p class="text-lg text-center text-gray-600 mb-8">Деталізований огляд виробництва</p>
 
         <!-- Форма для відправки даних -->
-        <form id="checklistForm" class="space-y-6">
+        <form id="checklistForm" class="space-y-8">
 
             <!-- Повідомлення про статус відправки -->
             <div id="statusMessage" class="mt-4 text-center text-sm font-semibold hidden"></div>
 
-            <!-- Розділ "Охорона праці" -->
-            <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">1. Охорона праці</h2>
+            <!-- Розділ 1: Охорона праці -->
+            <div class="bg-blue-50 p-6 rounded-xl border-2 border-blue-200 shadow-sm">
+                <h2 class="text-2xl font-semibold text-blue-800 mb-6 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    1. Охорона праці
+                </h2>
                 
-                <h3 class="text-lg font-medium text-gray-700 mt-6 mb-2">Загальний стан робочих місць</h3>
+                <!-- Підрозділ: Загальний стан робочих місць -->
                 <div class="space-y-4">
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Робочі місця чисті, без сторонніх предметів.?</span>
+                    <h3 class="text-lg font-medium text-gray-700 mt-2 mb-2">Загальний стан робочих місць</h3>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Робочі місця чисті, без сторонніх предметів?</span>
                         <select name="ОП_Чистота" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Вентиляція/витяжка наявна та працює?</span>
-                        <select name="ОП_Чистота" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Вентиляція/витяжка наявна та працює?</span>
+                        <select name="ОП_Вентиляція" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Проходи вільні?</span>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Проходи вільні?</span>
                         <select name="ОП_Проходи" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Належне освітлення?</span>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Належне освітлення?</span>
                         <select name="ОП_Освітлення" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
                 </div>
 
-                <h3 class="text-lg font-medium text-gray-700 mt-6 mb-2">Засоби індивідуального захисту (ЗІЗ)</h3>
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Працівники забезпечені та використовують ЗІЗ?</span>
+                <!-- Підрозділ: Засоби індивідуального захисту (ЗІЗ) -->
+                <div class="space-y-4 mt-6">
+                    <h3 class="text-lg font-medium text-gray-700 mt-2 mb-2">Засоби індивідуального захисту (ЗІЗ)</h3>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Працівники забезпечені та використовують ЗІЗ?</span>
                         <select name="ОП_ЗІЗ_Використання" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
-                    
+                    </div>
                 </div>
 
-                <h3 class="text-lg font-medium text-gray-700 mt-6 mb-2">Безпека обладнання</h3>
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Захисні кожухи на місці?</span>
+                <!-- Підрозділ: Безпека обладнання -->
+                <div class="space-y-4 mt-6">
+                    <h3 class="text-lg font-medium text-gray-700 mt-2 mb-2">Безпека обладнання</h3>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Захисні кожухи на місці?</span>
                         <select name="ОП_Обладнання_Кожухи" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Кнопки аварійної зупинки доступні?</span>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Кнопки аварійної зупинки доступні?</span>
                         <select name="ОП_Обладнання_АварійнаЗупинка" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Відсутній вільний доступ всередину стендів?</span>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Відсутній вільний доступ всередину стендів?</span>
                         <select name="ОП_Обладнання_Огляди" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
-                        </select>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Інструкції біля обладнання є?</span>
-                        <select name="ОП_Обладнання_Інструкції" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
-                            <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
                 </div>
 
-                <h3 class="text-lg font-medium text-gray-700 mt-6 mb-2">Електробезпека</h3>
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Пошкоджена ізоляція відсутня?</span>
+                <!-- Підрозділ: Електробезпека -->
+                <div class="space-y-4 mt-6">
+                    <h3 class="text-lg font-medium text-gray-700 mt-2 mb-2">Електробезпека</h3>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Пошкоджена ізоляція відсутня?</span>
                         <select name="ОП_Електробезпека_Ізоляція" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Електрощитові закриті?</span>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Електрощитові закриті?</span>
                         <select name="ОП_Електробезпека_Щитові" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Відсутнє перевантаження розеток або використання «троників».?</span>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Відсутнє перевантаження розеток або використання «троників»?</span>
                         <select name="ОП_Електробезпека_Килимки" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
                 </div>
             </div>
 
-            <!-- Розділ "Пожежна безпека" -->
-            <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">2. Пожежна безпека</h2>
+            <!-- Розділ 2: Пожежна безпека -->
+            <div class="bg-red-50 p-6 rounded-xl border-2 border-red-200 shadow-sm">
+                <h2 class="text-2xl font-semibold text-red-800 mb-6 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 21.5c-5.523 0-10-4.477-10-10s4.477-10 10-10 10 4.477 10 10-4.477 10-10 10z"></path>
+                        <path d="M12 11c-2.761 0-5 2.239-5 5s2.239 5 5 5"></path>
+                        <path d="M12 11a5 5 0 0 1 0 10"></path>
+                    </svg>
+                    2. Пожежна безпека
+                </h2>
                 
-                <h3 class="text-lg font-medium text-gray-700 mt-6 mb-2">Первинні засоби пожежогасіння</h3>
+                <!-- Підрозділ: Первинні засоби пожежогасіння -->
                 <div class="space-y-4">
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Вогнегасники на місці?</span>
-                        <select name="ПБ_Вогнегасники_НаМісці" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
+                    <h3 class="text-lg font-medium text-gray-700 mt-2 mb-2">Первинні засоби пожежогасіння</h3>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Вогнегасники на місці?</span>
+                        <select name="ПБ_Вогнегасники_НаМісці" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-red-500 focus:border-red-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Доступ до пожежних шаф вільний?</span>
-                        <select name="ПБ_Вогнегасники_Стан" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Доступ до пожежних шаф вільний?</span>
+                        <select name="ПБ_Вогнегасники_Доступ" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-red-500 focus:border-red-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Вогнегасники легкодоступні?</span>
-                        <select name="ПБ_Вогнегасники_Доступність" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Вогнегасники легкодоступні?</span>
+                        <select name="ПБ_Вогнегасники_Доступність" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-red-500 focus:border-red-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
                 </div>
                 
-                <h3 class="text-lg font-medium text-gray-700 mt-6 mb-2">Шляхи евакуації</h3>
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Шляхи евакуації вільні?</span>
-                        <select name="ПБ_Евакуація_ВільніПроходи" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
+                <!-- Підрозділ: Шляхи евакуації -->
+                <div class="space-y-4 mt-6">
+                    <h3 class="text-lg font-medium text-gray-700 mt-2 mb-2">Шляхи евакуації</h3>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Шляхи евакуації вільні?</span>
+                        <select name="ПБ_Евакуація_ВільніПроходи" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-red-500 focus:border-red-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
-                    
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Двері евакуаційних виходів відкриваються вільно?</span>
-                        <select name="ПБ_Евакуація_Двері" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Двері евакуаційних виходів відкриваються вільно?</span>
+                        <select name="ПБ_Евакуація_Двері" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-red-500 focus:border-red-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
                 </div>
-
-                
             </div>
 
-            <!-- Розділ "Екологія" -->
-            <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">3. Екологія</h2>
+            <!-- Розділ 3: Екологія -->
+            <div class="bg-green-50 p-6 rounded-xl border-2 border-green-200 shadow-sm">
+                <h2 class="text-2xl font-semibold text-green-800 mb-6 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 8l4 4-4 4"></path>
+                        <path d="M12 16l-4-4 4-4"></path>
+                    </svg>
+                    3. Екологія
+                </h2>
                 
-                <h3 class="text-lg font-medium text-gray-700 mt-6 mb-2">Поводження з відходами</h3>
+                <!-- Підрозділ: Поводження з відходами -->
                 <div class="space-y-4">
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Відходи сортуються?</span>
-                        <select name="Еко_Відходи_Сортування" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
+                    <h3 class="text-lg font-medium text-gray-700 mt-2 mb-2">Поводження з відходами</h3>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Відходи сортуються?</span>
+                        <select name="Еко_Відходи_Сортування" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-green-500 focus:border-green-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Контейнери марковані?</span>
-                        <select name="Еко_Відходи_Маркування" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Контейнери марковані?</span>
+                        <select name="Еко_Відходи_Маркування" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-green-500 focus:border-green-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Територія навколо контейнерів чиста?</span>
-                        <select name="Еко_Відходи_Чистота" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Територія навколо контейнерів чиста?</span>
+                        <select name="Еко_Відходи_Чистота" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-green-500 focus:border-green-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
                 </div>
                 
-                <h3 class="text-lg font-medium text-gray-700 mt-6 mb-2">Робота з небезпечними речовинами</h3>
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Речовини зберігаються в маркованих ємностях?</span>
-                        <select name="Еко_Речовини_Зберігання" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
+                <!-- Підрозділ: Робота з небезпечними речовинами -->
+                <div class="space-y-4 mt-6">
+                    <h3 class="text-lg font-medium text-gray-700 mt-2 mb-2">Робота з небезпечними речовинами</h3>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Речовини зберігаються в маркованих ємностях?</span>
+                        <select name="Еко_Речовини_Зберігання" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-green-500 focus:border-green-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Інструкції/паспорти безпеки є?</span>
-                        <select name="Еко_Речовини_Паспорти" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Інструкції/паспорти безпеки є?</span>
+                        <select name="Еко_Речовини_Паспорти" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-green-500 focus:border-green-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-700">Витоки речовин відсутні?</span>
-                        <select name="Еко_Речовини_Піддони" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-gray-700 mb-2 md:mb-0">Витоки речовин відсутні?</span>
+                        <select name="Еко_Речовини_Піддони" class="bg-white border border-gray-300 rounded-lg p-2 focus:ring-green-500 focus:border-green-500">
                             <option value="">-- Виберіть --</option>
-                            <option value="+">+</option>
-                            <option value="-">-</option>
+                            <option value="+">Так</option>
+                            <option value="-">Ні</option>
                         </select>
                     </div>
                 </div>
             </div>
 
             <!-- Поле для коментарів -->
-            <div class="space-y-2">
+            <div class="p-6 rounded-xl border-2 border-gray-200 shadow-sm bg-white space-y-2">
                 <label for="comments" class="text-lg font-medium text-gray-800">Виявлені недоліки та зауваження:</label>
                 <textarea id="comments" name="Коментарі" rows="4" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400" placeholder="Вкажіть будь-які проблеми, які потребують уваги..."></textarea>
             </div>
@@ -279,7 +295,7 @@
             event.preventDefault();
 
             // URL вашого скрипта Google Apps Script (замініть на свій)
-            const SCRIPT_URL = 'https://script.google.com/macros/s/ВАШ_СКРИПТ_ID/exec'; 
+            const SCRIPT_URL = 'https://script.google.com/macros/s/ВАШ_СКРИПТ_ID/exec';
 
             const form = event.target;
             const formData = new FormData(form);
